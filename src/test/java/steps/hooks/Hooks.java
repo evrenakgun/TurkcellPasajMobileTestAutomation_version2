@@ -23,7 +23,7 @@ public class Hooks {
     }
 
     @AfterStep
-    public void takeScreenshot(Scenario scenario) throws IOException {
+    public void takeScreenshot(Scenario scenario) {
         //validate if scenario has failed
         if (scenario.isFailed()) {
             final byte[] screenshotByteType = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
