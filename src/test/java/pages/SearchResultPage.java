@@ -10,7 +10,7 @@ import java.util.List;
 import static utils.constants.SearchBoxConstants.SEARCH_WORD;
 
 public class SearchResultPage extends BasePage {
-    public SearchResultPage(AppiumDriver driver) {
+    public SearchResultPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

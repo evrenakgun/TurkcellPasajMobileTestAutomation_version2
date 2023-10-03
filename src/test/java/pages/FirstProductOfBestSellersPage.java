@@ -1,12 +1,13 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import model.FirstProductNameOfBestSellers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FirstProductOfBestSellersPage extends BasePage {
-    public FirstProductOfBestSellersPage(AppiumDriver driver) {
+    public FirstProductOfBestSellersPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

@@ -1,10 +1,11 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {
-    public MainPage(AppiumDriver driver) {
+    public MainPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

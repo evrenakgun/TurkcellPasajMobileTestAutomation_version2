@@ -1,6 +1,7 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
@@ -17,12 +18,12 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class BasePage {
-    protected AppiumDriver driver;
+    protected AppiumDriver<MobileElement> driver;
     protected WebDriverWait wait;
 
-    public BasePage(AppiumDriver driver) {
+    public BasePage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 

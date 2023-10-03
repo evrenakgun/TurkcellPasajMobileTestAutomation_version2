@@ -10,9 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverManager {
-    public static AppiumDriver driver;
+    public static AppiumDriver<MobileElement> driver;
 
-    public static AppiumDriver startDriver() throws MalformedURLException, InterruptedException {
+    public static AppiumDriver<MobileElement> startDriver() throws MalformedURLException, InterruptedException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("deviceName", "Pixel 2 API 30");
@@ -32,7 +32,7 @@ public class DriverManager {
         return getDriver();
     }
 
-    public static AppiumDriver getDriver() {
+    public static AppiumDriver<MobileElement> getDriver() {
         return driver;
     }
 

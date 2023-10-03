@@ -1,13 +1,14 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import static utils.constants.SearchBoxConstants.SEARCH_WORD;
 
 public class SearchPage extends BasePage {
-    public SearchPage(AppiumDriver driver) {
+    public SearchPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 
