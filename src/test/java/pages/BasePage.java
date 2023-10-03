@@ -70,8 +70,8 @@ public class BasePage {
         driver.findElement(element).clear();
     }
 
+    // Elementi bulana kadar sayfayı aşağı kaydırın
     public void scrollDownUntilElementVisible(By element) {
-
         while (true) {
             try {
                 // Sayfanın boyutunu alın
@@ -89,13 +89,17 @@ public class BasePage {
                         .release()
                         .perform();
 
+                // Elementi bulduğunda try-catch'ten kurtarın
                 if (driver.findElement(element).isDisplayed()) {
                     break;
                 }
 
+                // Elementi bulamayınca NoSuchElementException hatası verecektir, catch ile yakalayın
             } catch (NoSuchElementException e) {
+                // Recursive metot ile elementi bulana kadar kaydırma işlemini yapmasını sağlayın
                 scrollDownUntilElementVisible(element);
             }
+            // finally ile elementi bulduğunu doğrulayıp while döngüsünden kurtarın
             finally {
                 driver.findElement(element).isDisplayed();
                 break;
@@ -103,6 +107,7 @@ public class BasePage {
         }
     }
 
+    // Elementi bulana kadar sayfayı yukarı kaydırın
     public void scrollUpUntilElementVisible(By element) {
         while (true) {
             try {
@@ -121,15 +126,20 @@ public class BasePage {
                         .release()
                         .perform();
 
+                // Elementi bulduğunda try-catch'ten kurtarın
                 if (driver.findElement(element).isDisplayed()) {
                     break;
                 }
 
+                // Elementi bulamayınca NoSuchElementException hatası verecektir, catch ile yakalayın
             } catch (NoSuchElementException e) {
+                // Recursive metot ile elementi bulana kadar kaydırma işlemini yapmasını sağlayın
                 scrollUpUntilElementVisible(element);
             }
+            // finally ile elementi bulduğunu doğrulayıp while döngüsünden kurtarın
             finally {
                 driver.findElement(element).isDisplayed();
+                break;
             }
         }
     }
